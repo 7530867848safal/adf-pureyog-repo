@@ -1,0 +1,23 @@
+{
+	"name": "LS_ASQLDB",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "db-pureyog-server.database.windows.net",
+			"database": "db-pureyog",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "pureyogadmin",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "LS_KeyVault",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "pureyogadmin"
+			}
+		}
+	}
+}
